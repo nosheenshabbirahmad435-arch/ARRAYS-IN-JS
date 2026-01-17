@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ARRAY BASIC CONCEPT</h1>
+    <script>
+      //ARRAY AIK VARIABLES HOTA HA JO MULTIPLE VALUE KO AIK JAGAH STORE KARTA HA
+      //WITHOUT ARRAY
+      let name1 = "ali";
+      let name3 = "ahsan";
+      let name2 = "shazim";
+      console.log(name1);
+      console.log(name2);
+      console.log(name3);
+      //PROBLEM IF WE WANT TO ENTER/STORE  1000 VALUES IT IS VERY COMPLICATED
+      // AND NOT A BEST PRACTICE
+      // WITH ARRAY
+      let fruits = ["apple", "banana", "mango", "orange"];
+      //array square bracket sa banta ha
+      //ARRAY INDEX KIA HOTA HA ARRAY KE HER ELEMENT KA NUMBER HOTA HA JISAY
+      //  INDEX KEHTAY HA INDEX 0 SA START HOTA HA
+      console.log(fruits[0]);
+      console.log(fruits[1]);
+      console.log(fruits[2]);
+      console.log(fruits[3]);
+      //ARRAY KI LENGTH SIZE
+      console.log(fruits.length); //===4
+      //ARRAY KI VALUE CHANGE KARNA
+      fruits[3] = "grapes";
+      console.log(fruits);
+      //LAST PER VALUE ADD KARNA
+      fruits.push("watermelon");
+      console.log(fruits);
+      //LAST SA REMOVE KARNA
+      fruits.pop();
+      fruits.push("watermelon");
+      console.log(fruits);
+      //UNSHIFT START MEN ADD KARNA
+      fruits.unshift("melon");
+      console.log(fruits);
+      //START SAA REMOVE KARNA
+      fruits.shift();
+      console.log(fruits);
+      fruits.splice(1, 2);
+      console.log(fruits);
+
+      let students = ["John", "Mary", "Bob", "Alice", "John"];
+
+      // indexOf() - finds the first position of an item
+      console.log(students.indexOf("Mary")); // 1
+      console.log(students.indexOf("Bob")); // 2
+      console.log(students.indexOf("David")); // -1 (not found)
+
+      // includes() - checks if an item exists
+      console.log(students.includes("Alice")); // true
+      console.log(students.includes("David")); // false
+
+      // find() - finds the first item that matches a condition
+      let longName = students.find((name) => name.length > 4);
+      console.log(longName); // "Alice"
+
+      let numbers = [1, 2, 3, 4, 5];
+
+      // map() - creates a new array by changing each item
+      let doubled = numbers.map((num) => num * 2);
+      console.log(doubled); // [2, 4, 6, 8, 10]
+      console.log(numbers); // [1, 2, 3, 4, 5] (original unchanged)
+
+      // forEach() - does something with each item
+      numbers.forEach((num) => {
+        console.log("Number:", num);
+      });
+      // Output:
+      // Number: 1
+      // Number: 2
+      // Number: 3
+      // Number: 4
+      // Number: 5
+
+      let ages = [12, 25, 18, 35, 16, 28];
+
+      // filter() - creates a new array with items that match a condition
+      let adults = ages.filter((age) => age >= 18);
+      console.log(adults); // [25, 18, 35, 28]
+
+      let teenagers = ages.filter((age) => age >= 13 && age <= 19);
+      console.log(teenagers); // [18, 16]
+
+      // Original array is unchanged
+      console.log(ages); // [12, 25, 18, 35, 16, 28]
+
+      let fru = ["banana", "apple", "orange", "cherry"];
+      let number = [3, 1, 4, 1, 5, 9, 2, 6];
+
+      // sort() - sorts items alphabetically
+      fru.sort();
+      console.log(fru); // ["apple", "banana", "cherry", "orange"]
+
+      // For numbers, we need to be more specific
+      numbers.sort((a, b) => a - b); // Sort from smallest to largest
+      console.log(numbers); // [1, 1, 2, 3, 4, 5, 6, 9]
+
+      // reverse() - reverses the order
+      numbers.reverse();
+      console.log(numbers); // [9, 6, 5, 4, 3, 2, 1, 1]
+
+      let firstNames = ["John", "Mary"];
+      let lastNames = ["Smith", "Johnson"];
+
+      // concat() - combines arrays
+      let fullNames = firstNames.concat(lastNames);
+      console.log(fullNames); // ["John", "Mary", "Smith", "Johnson"]
+
+      // join() - converts array to string
+      let fr = ["apple", "banana", "orange"];
+      let frString = fr.join(", ");
+      console.log(frString); // "apple, banana, orange"
+
+      // split() - converts string to array
+      let sentence = "Hello world JavaScript";
+      let words = sentence.split(" ");
+      console.log(words); // ["Hello", "world", "JavaScript"]
+
+      //ARRAY WITH LOOPS
+      let fruit = ["apple", "banana", "mango", "orange"];
+      for (let i = 0; i < fruit.length; i++) {
+        console.log(fruit[i]);
+      }
+      // Creating a shopping cart
+      let cart = [];
+
+      // Adding items to cart
+      cart.push("laptop");
+      cart.push("mouse");
+      cart.push("keyboard");
+      console.log("Cart:", cart); // ["laptop", "mouse", "keyboard"]
+
+      // Checking if item exists
+      if (cart.includes("laptop")) {
+        console.log("Laptop is in your cart! 💻");
+      }
+
+      // Removing an item
+      let removedItem = cart.splice(cart.indexOf("mouse"), 1);
+      console.log("Removed:", removedItem[0]); // "mouse"
+      console.log("Updated cart:", cart); // ["laptop", "keyboard"]
+
+      // Total items in cart
+      console.log("Total items:", cart.length); // 2
+
+      // Student grades
+      let grades = [85, 92, 78, 96, 88, 73, 91];
+
+      // Finding average grade
+      let total = grades.reduce((sum, grade) => sum + grade, 0);
+      let average = total / grades.length;
+      console.log("Average grade:", average.toFixed(1)); // 86.1
+
+      // Finding highest and lowest grades
+      let highest = Math.max(...grades);
+      let lowest = Math.min(...grades);
+      console.log("Highest grade:", highest); // 96
+      console.log("Lowest grade:", lowest); // 73
+
+      // Students who passed (grade >= 80)
+      let passingGrades = grades.filter((grade) => grade >= 80);
+      console.log("Passing grades:", passingGrades); // [85, 92, 96, 88, 91]
+      console.log("Students passed:", passingGrades.length); // 5
+
+      // Simple to-do list
+      let todoList = ["Buy groceries", "Walk the dog", "Study JavaScript"];
+
+      // Adding new tasks
+      todoList.push("Call mom");
+      todoList.push("Clean room");
+      console.log("To-do list:", todoList);
+
+      // Completing a task (removing from list)
+      function completeTask(task) {
+        let index = todoList.indexOf(task);
+        if (index !== -1) {
+          todoList.splice(index, 1);
+          console.log("✅ Completed:", task);
+        } else {
+          console.log("❌ Task not found:", task);
+        }
+      }
+
+      completeTask("Walk the dog");
+      console.log("Updated list:", todoList);
+
+      // Checking remaining tasks
+      console.log("Tasks remaining:", todoList.length);
+
+      // Managing a list of names
+      let names = ["alice", "bob", "charlie", "diana"];
+
+      // Making all names start with capital letter
+      let capitalizedNames = names.map(
+        (name) => name.charAt(0).toUpperCase() + name.slice(1)
+      );
+      console.log("Capitalized:", capitalizedNames); // ["Alice", "Bob", "Charlie", "Diana"]
+
+      // Finding names with more than 4 letters
+      let longNames = capitalizedNames.filter((name) => name.length > 4);
+      console.log("Long names:", longNames); // ["Alice", "Charlie", "Diana"]
+
+      // Sorting names alphabetically
+      let sortedNames = capitalizedNames.sort();
+      console.log("Sorted:", sortedNames); // ["Alice", "Bob", "Charlie", "Diana"]
+
+      // Creating a sentence from names
+      let sen = "My friends are: " + sortedNames.join(", ");
+      console.log(sentence); // "My friends are: Alice, Bob, Charlie, Diana"
+    </script>
+  </body>
+</html>
